@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{EAF8E2A4-A773-4978-9088-D65E27638316}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Mediatr", "Example.Mediatr\Example.Mediatr.csproj", "{3C7F98A4-8570-4B00-8ADB-97029288A75A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAF8E2A4-A773-4978-9088-D65E27638316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF8E2A4-A773-4978-9088-D65E27638316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF8E2A4-A773-4978-9088-D65E27638316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF8E2A4-A773-4978-9088-D65E27638316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C7F98A4-8570-4B00-8ADB-97029288A75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C7F98A4-8570-4B00-8ADB-97029288A75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C7F98A4-8570-4B00-8ADB-97029288A75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C7F98A4-8570-4B00-8ADB-97029288A75A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B0AF14D-69FF-4EAC-87A4-8B7CB6813B02}
+	EndGlobalSection
+EndGlobal
