@@ -1,9 +1,8 @@
-﻿using Example.Mediatr.Endpoints.Todos.Contracts;
-using MediatR;
+﻿using MediatR;
 
 namespace Example.Mediatr.Endpoints.Todos.GetTodoById
 {
-    public class GetTodoByIdQuery : IRequest<GetTodoResponse>
+    public class GetTodoByIdQuery : IRequest<GetTodoByIdResponse>
     {
         public long Id { get; }
 

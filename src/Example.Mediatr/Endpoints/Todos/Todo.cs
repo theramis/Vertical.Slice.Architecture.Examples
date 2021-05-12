@@ -6,6 +6,8 @@
 
         public string Title { get; set; } = null!;
 
-        public bool Completed { get; } = false;
+        public bool Completed { get; set; } = false;
+
+        public long Order { get; set; } = 0;
     }
 }

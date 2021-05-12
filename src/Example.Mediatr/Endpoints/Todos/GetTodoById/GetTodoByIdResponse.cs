@@ -1,19 +1,19 @@
-﻿using System;
-
-namespace Example.Mediatr.Endpoints.Todos.Contracts
+﻿namespace Example.Mediatr.Endpoints.Todos.GetTodoById
 {
-    public class GetTodoResponse
+    public class GetTodoByIdResponse
     {
-        public GetTodoResponse(long id, string title, bool completed)
+        public GetTodoByIdResponse(long id, string title, bool completed, long order)
         {
             Id = id;
             Title = title;
             Completed = completed;
+            Order = order;
         }
 
         public long Id { get; }
         public string Title { get; }
         public bool Completed { get; }
+        public long Order { get; }
 
         public string Url { get; set; } = string.Empty;
     }
