@@ -1,6 +1,12 @@
-﻿using System.Reflection;
-using Example.Mediatr.Infrastructure;
-using MediatR;
+﻿using System.Collections.Generic;
+using System.Reflection;
+using Example.SeparateClasses.Endpoints.Todos.CreateTodo;
+using Example.SeparateClasses.Endpoints.Todos.DeleteTodoById;
+using Example.SeparateClasses.Endpoints.Todos.DeleteTodos;
+using Example.SeparateClasses.Endpoints.Todos.GetTodoById;
+using Example.SeparateClasses.Endpoints.Todos.GetTodos;
+using Example.SeparateClasses.Endpoints.Todos.UpdateTodoById;
+using Example.SeparateClasses.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace Example.Mediatr
+namespace Example.SeparateClasses
 {
     public class Startup
     {
@@ -38,12 +44,22 @@ namespace Example.Mediatr
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = Assembly.GetExecutingAssembly().GetName().Name, Version = "v1" });
             });
 
-            services.AddMediatR(typeof(Startup));
-
             services.AddDbContext<TodoDbContext>(options =>
             {
                 options.UseInMemoryDatabase("InMem");
             });
+
+            RegisterHandlers(services);
+        }
+
+        private static void RegisterHandlers(IServiceCollection services)
+        {
+            services.AddScoped<IHandler<CreateTodoCommand, GetTodoByIdResponse>, CreateTodoCommandHandler>();
+            services.AddScoped<IHandler<GetTodoByIdQuery, GetTodoByIdResponse>, GetTodoByIdQueryHandler>();
+            services.AddScoped<IHandler<DeleteTodoByIdCommand>, DeleteTodoByIdCommandHandler>();
+            services.AddScoped<IHandler<DeleteTodosCommand>, DeleteTodosCommandHandler>();
+            services.AddScoped<IHandler<GetTodosQuery, IEnumerable<GetTodoByIdResponse>>, GetTodosQueryHandler>();
+            services.AddScoped<IHandler<UpdateTodoByIdCommand, GetTodoByIdResponse>, UpdateTodoByIdCommandHandler>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
